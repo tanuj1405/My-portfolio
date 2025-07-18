@@ -1,0 +1,20 @@
+<section class="container mt-5">
+  <h2 class="text-center mb-4">My Projects</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let project of Projects">
+      <div class="card h-100">
+        <img *ngIf="project.image" [src]="project.image" class="card-img-top" alt="{{ project.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+        </div>
+        <div class="card-footer">
+          <a [href]="project.github" target="_blank" class="btn btn-sm btn-outline-dark">GitHub</a>
+          <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="btn btn-sm btn-outline-primary">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
